@@ -100,7 +100,7 @@ Material:
     - _BumpScale: 0.5
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _ColorIntensity: 1.5
+    - _ColorIntensity: 2.5
     - _ColorPower: 1
     - _Cull: 2
     - _Cutoff: 0.5

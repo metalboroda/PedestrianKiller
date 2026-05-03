@@ -15,6 +15,8 @@ MonoBehaviour:
   weaponName: AKM
   fireRate: 0.1
   maxDistance: 100
+  magazineSize: 30
+  reloadDuration: 1.5
   baseDamage: 15
   damageableLayerMask:
     serializedVersion: 2

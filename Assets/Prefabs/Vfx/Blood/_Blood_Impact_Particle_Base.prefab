@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectType: 0
   color: {r: 0.44313726, g: 0.32941177, b: 0.32941177, a: 0.98039216}
-  colorIntensity: 1.5
+  colorIntensity: 2.5
   albedoPower: 1.5
   ambientColorIntensity: 2.15
   hueShift: 0
