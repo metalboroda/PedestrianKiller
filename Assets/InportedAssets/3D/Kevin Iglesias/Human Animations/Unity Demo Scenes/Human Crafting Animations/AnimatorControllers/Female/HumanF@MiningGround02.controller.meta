@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ac580348d067d384a96b278039a997f3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 320526
+  packageName: Human Mega Animations Pack Lite
+  packageVersion: 1.0.1
+  assetPath: Assets/Kevin Iglesias/Human Animations/Unity Demo Scenes/Human Crafting
+    Animations/AnimatorControllers/Female/HumanF@MiningGround02.controller
+  uploadId: 771777

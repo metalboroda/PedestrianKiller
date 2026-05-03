@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6879b1f25dfa00d4d8ad48c29c73a248, type: 3}
+  m_Name: CharacterAnimationsDataSo
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.ScriptableObjects.Character.CharacterAnimationsDataSo
+  idleAnimations: []
+  <WalkAnimations>k__BackingField:
+  - Walk
+  - Walk_M
+  <InjuredWalkAnimations>k__BackingField:
+  - InjuredWalk
+  - InjuredWalk_M
+  <InjuredRunAnimations>k__BackingField:
+  - InjuredRun
+  - InjuredRun_M
+  hitAnimations:
+  - Hit_1
+  - Hit_2
+  - Hit_3
+  - Hit_4
+  - Hit_5
+  <InjuredLyingAnimations>k__BackingField:
+  - InjuredLying_1
+  - InjuredLying_2
+  deathAnimations:
+  - Death_1
+  - Death_2
+  - Death_3
+  - Death_4
+  - Death_5
+  - Death_6
+  - Death_7
+  - Death_1_M
+  - Death_2_M
+  - Death_3_M
+  - Death_4_M
+  - Death_5_M
+  - Death_6_M
+  - Death_7_M

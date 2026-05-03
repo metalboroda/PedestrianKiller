@@ -1,0 +1,29 @@
+﻿#pragma kernel Clear
+#pragma kernel ClearWithTangents TANGENTS
+
+#define PROJECT_UV
+#include "../fGPUDecalWriteShaderShared.cginc"
+
+[numthreads(256,1,1)]
+void Clear (uint3 id : SV_DispatchThreadID)
+{
+    if (id.x >= _DecalBufferSize) return;
+
+    Triangle2 t = fGPUDecalVBuffer[id.x];
+#ifdef SLICEID
+    if (floor(t.decalIDSlice) == _DecalID)
+#else
+	if (t.decalID == _DecalID)
+#endif
+    {
+        t.worldPosA = t.worldPosB = t.worldPosC = 1.0f / 0.0f;
+        fGPUDecalVBuffer[id.x] = t;
+    }
+}
+
+[numthreads(256,1,1)]
+void ClearWithTangents (uint3 id : SV_DispatchThreadID)
+{
+	Clear(id);
+}
+
