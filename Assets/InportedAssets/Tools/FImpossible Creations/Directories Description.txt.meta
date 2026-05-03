@@ -5,3 +5,10 @@ TextScriptImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 274837
+  packageName: F Texture Tools
+  packageVersion: 1.1.6
+  assetPath: Assets/InportedAssets/Tools/FImpossible Creations/Directories Description.txt
+  uploadId: 894306

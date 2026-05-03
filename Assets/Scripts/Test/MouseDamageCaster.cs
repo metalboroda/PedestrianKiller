@@ -1,58 +1,62 @@
-﻿using Assets.Scripts.Interfaces;
+﻿using System.Linq;
+using Assets.Scripts.EventBus;
+using Assets.Scripts.Interfaces;
+using Assets.Scripts.ScriptableObjects.Weapons;
+using Lean.Pool;
 using UnityEngine;
 
 namespace Assets.Scripts.Test
 {
     public class MouseDamageCaster : MonoBehaviour
     {
-        [Header("Distance")]
-        [SerializeField] private float maxDistance = 100f;
+        private EventBinding<Events.FireRequested> _fireBinding;
 
-        [Header("Damage Settings")]
-        [SerializeField] private float baseDamage = 15f;
-        [Space]
-        [SerializeField] private LayerMask damageableLayerMask;
-
-        [Header("Physics Settings")]
-        [SerializeField] private float forceAmount = 10f;
-        [Space]
-        [SerializeField] private ForceMode forceMode = ForceMode.Impulse;
-        [Space]
-        [SerializeField] private LayerMask physicalLayerMask;
-
-        [Header("Decals Settings")]
-        [SerializeField] private bool shouldSpawnDecals = true;
-
-        private Camera _mainCamera;
-
-        private void Awake()
+        private void OnEnable()
         {
-            _mainCamera = Camera.main;
+            _fireBinding = new EventBinding<Events.FireRequested>(HandleFireRequest);
+            EventBus<Events.FireRequested>.Register(_fireBinding);
         }
 
-        private void Update()
+        private void OnDisable()
         {
-            if (Input.GetMouseButtonDown(0))
-                HandleMouseClick();
+            EventBus<Events.FireRequested>.Unregister(_fireBinding);
         }
 
-        private void HandleMouseClick()
+        private void HandleFireRequest(Events.FireRequested eventData)
         {
-            Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-            
-            if (Physics.Raycast(ray, out RaycastHit damageHit, maxDistance, damageableLayerMask))
+            WeaponConfigSo config = eventData.Config;
+            Ray ray = eventData.ShootingRay;
+
+            if (Physics.Raycast(ray, out RaycastHit damageHit, config.maxDistance, config.damageableLayerMask))
             {
                 if (damageHit.collider.TryGetComponent(out IDamageable damageable))
-                    damageable.TakeDamage(baseDamage, damageHit.point, damageHit.normal, damageHit.collider.gameObject, shouldSpawnDecals);
+                    damageable.TakeDamage(config.baseDamage, damageHit.point, damageHit.normal,
+                        damageHit.collider.gameObject, config.shouldSpawnDecals);
             }
-            
-            if (Physics.Raycast(ray, out RaycastHit physicsHit, maxDistance, physicalLayerMask))
+
+            if (Physics.Raycast(ray, out RaycastHit physicsHit, config.maxDistance, config.physicalLayerMask))
             {
                 Rigidbody rb = physicsHit.collider.attachedRigidbody;
-                
+
                 if (rb)
-                    rb.AddForceAtPosition(ray.direction * forceAmount, physicsHit.point, forceMode);
+                    rb.AddForceAtPosition(ray.direction * config.forceAmount, physicsHit.point, config.forceMode);
             }
+
+            if (Physics.Raycast(ray, out RaycastHit vfxHit, config.maxDistance, config.vfxLayerMask))
+                SpawnMaterialEffect(vfxHit, config);
+        }
+
+        private void SpawnMaterialEffect(RaycastHit hit, WeaponConfigSo config)
+        {
+            Renderer targetRenderer = hit.collider.GetComponent<Renderer>();
+
+            if (!targetRenderer) return;
+
+            Material hitMaterial = targetRenderer.sharedMaterial;
+            var effectConfig = config.materialEffects.FirstOrDefault(c => c.materials.Contains(hitMaterial));
+
+            if (effectConfig != null && effectConfig.effectPrefab)
+                LeanPool.Spawn(effectConfig.effectPrefab, hit.point, Quaternion.LookRotation(hit.normal));
         }
     }
 }

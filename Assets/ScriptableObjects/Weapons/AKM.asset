@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee5f9508c3d412cac736042a256344a, type: 3}
+  m_Name: AKM
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.ScriptableObjects.Weapons.WeaponConfigSo
+  weaponName: AKM
+  fireRate: 0.1
+  maxDistance: 100
+  baseDamage: 15
+  damageableLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  shouldSpawnDecals: 1
+  forceAmount: 25
+  forceMode: 1
+  physicalLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  rotationSpeed: 20
+  recoilStrength: 0.05
+  recoilRotationStrength: 1
+  recoilDuration: 0.1
+  recoilVibrato: 5
+  vfxLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  materialEffects: []

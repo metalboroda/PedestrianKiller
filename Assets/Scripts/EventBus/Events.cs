@@ -2,6 +2,7 @@ using Assets.Scripts.Character;
 using Assets.Scripts.Enums;
 using Assets.Scripts.FSM;
 using Assets.Scripts.GameManagement;
+using Assets.Scripts.ScriptableObjects.Weapons;
 using UnityEngine;
 
 namespace Assets.Scripts.EventBus
@@ -92,6 +93,22 @@ namespace Assets.Scripts.EventBus
         {
             public int CharacterID;
         }
+        #endregion
+        
+        #region WeaponSystem
+        public struct FireRequested : IEvent
+        {
+            public WeaponConfigSo Config;
+            public Ray ShootingRay;
+        }
+        
+        public struct AmmoChanged : IEvent
+        {
+            public int CurrentAmmo;
+            public int MaxAmmo;
+        }
+
+        public struct ReloadStarted : IEvent { }
         #endregion
 
         #region LevelLogic
