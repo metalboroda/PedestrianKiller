@@ -5,6 +5,11 @@ using UnityEngine;
 
 namespace Assets.Scripts.Character
 {
+    [RequireComponent(typeof(CharacterHealthHandler))]
+    [RequireComponent(typeof(CharacterAnimationsHandler))]
+    [RequireComponent(typeof(CharacterRagdollHandler))]
+    [RequireComponent(typeof(CharacterMovementHandler))]
+    [RequireComponent(typeof(CharacterDecalVfxHandler))]
     public class CharacterController : MonoBehaviour
     {
         public FiniteStateMachine<CharacterController> StateMachine { get; private set; }
@@ -68,7 +73,7 @@ namespace Assets.Scripts.Character
             if (_isInjured) return;
 
             _isInjured = true;
-            
+
             StateMachine.ChangeState(StateFactory.GetState<CharacterInjuredLyingState>());
         }
 
@@ -77,7 +82,7 @@ namespace Assets.Scripts.Character
             if (eventData.CharacterID == gameObject.GetInstanceID())
             {
                 _isDead = true;
-                
+
                 StateMachine.ChangeState(StateFactory.GetState<CharacterDeathState>());
             }
         }

@@ -6,6 +6,7 @@ namespace Assets.Scripts.Character.States
     {
         protected FiniteStateMachine<CharacterController> StateMachine;
         protected StateFactory<CharacterController> StateFactory;
+        
         protected CharacterAnimationsHandler AnimationsHandler;
         protected CharacterRagdollHandler CharacterRagdollHandler;
         protected CharacterMovementHandler CharacterMovementHandler;
@@ -14,6 +15,7 @@ namespace Assets.Scripts.Character.States
         {
             StateMachine = context?.StateMachine;
             StateFactory = context?.StateFactory;
+            
             AnimationsHandler = context?.GetComponent<CharacterAnimationsHandler>();
             CharacterRagdollHandler = context?.GetComponent<CharacterRagdollHandler>();
             CharacterMovementHandler = context?.GetComponent<CharacterMovementHandler>();

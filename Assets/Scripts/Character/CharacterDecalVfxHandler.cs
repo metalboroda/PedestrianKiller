@@ -17,7 +17,7 @@ namespace Assets.Scripts.Character
         [Header("Impact VFX")]
         [SerializeField] private GameObject[] impactPrefabs;
 
-        [Header("Blood Puddles (Ray Search)")]
+        [Header("Blood Puddles")]
         [SerializeField] private GameObject[] puddlePrefabs;
         [Space]
         [SerializeField] private float puddleSpawnDelay = 1.5f;
