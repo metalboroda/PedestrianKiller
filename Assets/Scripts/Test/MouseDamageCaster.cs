@@ -5,14 +5,20 @@ namespace Assets.Scripts.Test
 {
     public class MouseDamageCaster : MonoBehaviour
     {
-        [Header("Damage Settings")]
-        [SerializeField] private float baseDamage = 10f;
+        [Header("Distance")]
         [SerializeField] private float maxDistance = 100f;
+
+        [Header("Damage Settings")]
+        [SerializeField] private float baseDamage = 15f;
+        [Space]
         [SerializeField] private LayerMask damageableLayerMask;
 
         [Header("Physics Settings")]
         [SerializeField] private float forceAmount = 10f;
+        [Space]
         [SerializeField] private ForceMode forceMode = ForceMode.Impulse;
+        [Space]
+        [SerializeField] private LayerMask physicalLayerMask;
 
         [Header("Decals Settings")]
         [SerializeField] private bool shouldSpawnDecals = true;
@@ -33,16 +39,19 @@ namespace Assets.Scripts.Test
         private void HandleMouseClick()
         {
             Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out RaycastHit hit, maxDistance, damageableLayerMask))
+            
+            if (Physics.Raycast(ray, out RaycastHit damageHit, maxDistance, damageableLayerMask))
             {
-                if (hit.collider.TryGetComponent(out IDamageable damageable))
-                    damageable.TakeDamage(baseDamage, hit.point, hit.normal, hit.collider.gameObject, shouldSpawnDecals);
-
-                Rigidbody rb = hit.collider.attachedRigidbody;
-
+                if (damageHit.collider.TryGetComponent(out IDamageable damageable))
+                    damageable.TakeDamage(baseDamage, damageHit.point, damageHit.normal, damageHit.collider.gameObject, shouldSpawnDecals);
+            }
+            
+            if (Physics.Raycast(ray, out RaycastHit physicsHit, maxDistance, physicalLayerMask))
+            {
+                Rigidbody rb = physicsHit.collider.attachedRigidbody;
+                
                 if (rb)
-                    rb.AddForceAtPosition(ray.direction * forceAmount, hit.point, forceMode);
+                    rb.AddForceAtPosition(ray.direction * forceAmount, physicsHit.point, forceMode);
             }
         }
     }

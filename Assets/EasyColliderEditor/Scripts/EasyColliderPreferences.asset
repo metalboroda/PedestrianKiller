@@ -43,8 +43,8 @@ MonoBehaviour:
   AutoSelectOnPrefabOpen: 0
   AutoIncludeChildSkinnedMeshes: 1
   AutoSkinnedForce256Triangles: 1
-  AutoSkinnedMinBoneWeight: 0.071
-  AutoSkinnedMinRealignAngle: 8.6
+  AutoSkinnedMinBoneWeight: 0.3
+  AutoSkinnedMinRealignAngle: 20
   AutoSkinnedAllowRealign: 1
   AutoSkinnedColliderType: 3
   AutoSkinnedDepenetrate: 0
@@ -52,10 +52,10 @@ MonoBehaviour:
   AutoSkinnedIterativeDepenetrationCount: 15
   AutoSkinnedPairing: 1
   AutoSkinnedPerBoneSettings: 0
-  AutoSkinnedShrinkAmount: 0.5
+  AutoSkinnedShrinkAmount: 0.06
   AutoSkinnedUseDistanceDeltaPairing: 1
   AutoSkinnedPairedDistanceDelta: 0.01
-  AutoSkinnedDepenetrateOrder: 3
+  AutoSkinnedDepenetrateOrder: 2
   BoxSelectPlusKey: 97
   BoxSelectMinusKey: 115
   CapsuleColliderMethod: 1
@@ -103,8 +103,8 @@ MonoBehaviour:
     pivot: {fileID: 0}
     attachTo: {fileID: 0}
   SaveConvexHullAsAsset: 1
-  ConvexHullSaveMethod: 1
-  SaveConvexHullPath: Assets/Models/Pedestrians/Male/
+  ConvexHullSaveMethod: 2
+  SaveConvexHullPath: Assets/Models/Pedestrians/Josh/Meshes/
   SaveConvexHullSubFolder: 
   SaveConvexHullSuffix: _ConvexHull_
   SelectedVertColour: {r: 0, g: 1, b: 0, a: 1}

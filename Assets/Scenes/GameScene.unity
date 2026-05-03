@@ -3721,8 +3721,8 @@ MonoBehaviour:
   pedestrianData: {fileID: 11400000, guid: c090171a0520ce1418addca6a41f5647, type: 2}
   minSpawnRate: 2
   maxSpawnRate: 5
-  numberOfSpawns: 1
-  pedestrianPrefab: {fileID: 3903870320747488325, guid: 2c88ee94772fd594cb3a0882106063aa,
+  numberOfSpawns: 100
+  pedestrianPrefab: {fileID: 26751742864506180, guid: b9a6045aabefe9c46ac01801253b03a9,
     type: 3}
 --- !u!4 &828578807
 Transform:
@@ -4248,8 +4248,8 @@ MonoBehaviour:
   pedestrianData: {fileID: 11400000, guid: c090171a0520ce1418addca6a41f5647, type: 2}
   minSpawnRate: 2
   maxSpawnRate: 5
-  numberOfSpawns: 5
-  pedestrianPrefab: {fileID: 3903870320747488325, guid: 2c88ee94772fd594cb3a0882106063aa,
+  numberOfSpawns: 100
+  pedestrianPrefab: {fileID: 26751742864506180, guid: b9a6045aabefe9c46ac01801253b03a9,
     type: 3}
 --- !u!4 &1062256810
 Transform:
@@ -7607,13 +7607,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0953f9e8b34940419c6f3c4c37982598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Test.MouseDamageCaster
-  baseDamage: 15
   maxDistance: 100
+  baseDamage: 15
   damageableLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  forceAmount: 25
+  forceAmount: 10
   forceMode: 1
+  physicalLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
   shouldSpawnDecals: 1
 --- !u!4 &1807486094
 Transform:

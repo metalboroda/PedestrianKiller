@@ -5,12 +5,11 @@
         public override void Enter()
         {
             base.Enter();
-            AnimationsHandler.DeathAnimation();
 
-            /*if (StateMachine.PreviousState != StateFactory.GetState<CharacterInjuredLyingState>())
+            if (StateMachine.PreviousState != StateFactory.GetState<CharacterInjuredLyingState>())
                 AnimationsHandler.DeathAnimation();
             else
-                AnimationsHandler.StopAnimator();*/
+                AnimationsHandler.StopAnimator();
 
             CharacterRagdollHandler.EnableDeadRagdoll();
             CharacterMovementHandler.StopMovement();

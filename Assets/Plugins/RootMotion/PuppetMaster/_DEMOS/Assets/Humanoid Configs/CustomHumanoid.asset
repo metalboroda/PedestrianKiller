@@ -21,7 +21,7 @@ MonoBehaviour:
     freezePermanently: 0
     enableAngularLimitsOnKill: 1
     enableInternalCollisionsOnKill: 1
-  mode: 1
+  mode: 2
   blendTime: 0.1
   fixTargetTransforms: 1
   solverIterationCount: 6

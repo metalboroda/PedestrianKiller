@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.EventBus;
-using Lean.Pool;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -50,7 +49,7 @@ namespace Assets.Scripts.LevelLogic
 
         private void SpawnPedestrian()
         {
-            LeanPool.Spawn(pedestrianPrefab, transform.position, transform.rotation);
+            Instantiate(pedestrianPrefab, transform.position, transform.rotation);
 
             _localSpawnCount++;
             

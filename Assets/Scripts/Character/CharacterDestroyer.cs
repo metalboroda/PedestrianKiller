@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.EventBus;
-using Lean.Pool;
 using UnityEngine;
 
 namespace Assets.Scripts.Character
@@ -29,7 +28,7 @@ namespace Assets.Scripts.Character
         {
             if (eventData.CharacterID == pedestrianGameObject.GetInstanceID())
             {
-                LeanPool.Despawn(gameObject, destroyTime);
+                Destroy(gameObject, destroyTime);
             }
         }
     }
