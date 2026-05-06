@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.EventBus;
+using UnityEngine;
 
 namespace Assets.Scripts.Character.States
 {
@@ -7,6 +8,9 @@ namespace Assets.Scripts.Character.States
         private const float _injuredAnimationDelay = 1.5f;
         private float _injuryTick;
         private bool _isInjuryAnimationPlayed;
+        private const float _deathStateDelay = 10f;
+        private float _deathStateTick;
+        private int _myCharacterId;
 
         public override void Enter()
         {
@@ -14,6 +18,8 @@ namespace Assets.Scripts.Character.States
             AnimationsHandler.DeathAnimation();
             CharacterRagdollHandler.EnableInjuredRagdoll();
             CharacterMovementHandler.StopMovement();
+
+            _myCharacterId = Context.gameObject.GetInstanceID();
         }
 
         public override void Update()
@@ -31,6 +37,25 @@ namespace Assets.Scripts.Character.States
                     _isInjuryAnimationPlayed = true;
                 }
             }
+
+            _deathStateTick += Time.deltaTime;
+
+            if (_deathStateTick >= _deathStateDelay)
+            {
+                EventBus<Events.CharacterIsDeadAfterInjury>.Raise(new Events.CharacterIsDeadAfterInjury
+                {
+                    CharacterID = _myCharacterId
+                });
+
+                _deathStateTick = 0f;
+            }
+        }
+
+        public override void Exit()
+        {
+            base.Exit();
+
+            _deathStateTick = 0f;
         }
     }
 }

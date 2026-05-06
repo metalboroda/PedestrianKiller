@@ -3750,9 +3750,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.LevelLogic.PedestrianSpawner
   pedestrianData: {fileID: 11400000, guid: c090171a0520ce1418addca6a41f5647, type: 2}
-  minSpawnRate: 2
-  maxSpawnRate: 5
-  numberOfSpawns: 100
+  minSpawnRate: 4
+  maxSpawnRate: 8
+  numberOfSpawns: 10
   pedestrianPrefab: {fileID: 26751742864506180, guid: b9a6045aabefe9c46ac01801253b03a9,
     type: 3}
 --- !u!4 &828578807
@@ -4424,9 +4424,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.LevelLogic.PedestrianSpawner
   pedestrianData: {fileID: 11400000, guid: c090171a0520ce1418addca6a41f5647, type: 2}
-  minSpawnRate: 2
-  maxSpawnRate: 5
-  numberOfSpawns: 100
+  minSpawnRate: 4
+  maxSpawnRate: 8
+  numberOfSpawns: 10
   pedestrianPrefab: {fileID: 26751742864506180, guid: b9a6045aabefe9c46ac01801253b03a9,
     type: 3}
 --- !u!4 &1062256810

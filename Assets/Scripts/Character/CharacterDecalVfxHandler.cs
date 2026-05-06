@@ -51,6 +51,7 @@ namespace Assets.Scripts.Character
 
         private EventBinding<Events.BodyPartDamaged> _onHitBinding;
         private EventBinding<Events.CharacterIsDead> _onDeadBinding;
+        private EventBinding<Events.CharacterIsDeadAfterInjury> _onDeadAfterInjuryBinding;
 
         private void Awake()
         {
@@ -77,12 +78,15 @@ namespace Assets.Scripts.Character
             EventBus<Events.BodyPartDamaged>.Register(_onHitBinding);
             _onDeadBinding = new EventBinding<Events.CharacterIsDead>(HandleCharacterDead);
             EventBus<Events.CharacterIsDead>.Register(_onDeadBinding);
+            _onDeadAfterInjuryBinding = new EventBinding<Events.CharacterIsDeadAfterInjury>(HandleCharacterDeadAfterInjury);
+            EventBus<Events.CharacterIsDeadAfterInjury>.Register(_onDeadAfterInjuryBinding);
         }
 
         private void OnDisable()
         {
             EventBus<Events.BodyPartDamaged>.Unregister(_onHitBinding);
             EventBus<Events.CharacterIsDead>.Unregister(_onDeadBinding);
+            EventBus<Events.CharacterIsDeadAfterInjury>.Unregister(_onDeadAfterInjuryBinding);
         }
 
         private void HandleHit(Events.BodyPartDamaged data)
@@ -102,6 +106,13 @@ namespace Assets.Scripts.Character
         }
 
         private void HandleCharacterDead(Events.CharacterIsDead data)
+        {
+            if (data.CharacterID != _myCharacterId) return;
+            if (canSpawnPuddles)
+                StartCoroutine(DoSpawnPuddleWithDelay());
+        }
+
+        private void HandleCharacterDeadAfterInjury(Events.CharacterIsDeadAfterInjury data)
         {
             if (data.CharacterID != _myCharacterId) return;
             if (canSpawnPuddles)

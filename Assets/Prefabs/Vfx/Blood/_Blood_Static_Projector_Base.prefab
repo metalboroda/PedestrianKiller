@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a5b25a49f48476789a57cd6bb67cd5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.VFX.DecalHandler
-  destroyDelay: 5
+  destroyDelay: 10
   destroySpeed: 1
   minScale: 0.4
   maxScale: 0.2

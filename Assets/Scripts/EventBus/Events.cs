@@ -93,15 +93,20 @@ namespace Assets.Scripts.EventBus
         {
             public int CharacterID;
         }
+
+        public struct CharacterIsDeadAfterInjury : IEvent
+        {
+            public int CharacterID;
+        }
         #endregion
-        
+
         #region WeaponSystem
         public struct FireRequested : IEvent
         {
             public WeaponConfigSo Config;
             public Ray ShootingRay;
         }
-        
+
         public struct AmmoChanged : IEvent
         {
             public int CurrentAmmo;
