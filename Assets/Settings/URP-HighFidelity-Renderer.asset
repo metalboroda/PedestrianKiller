@@ -76,7 +76,8 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: -1878332245247344467}
   - {fileID: -7169281908016761878}
-  m_RendererFeatureMap: adc0de57c6d2eee5eab306d21698819c
+  - {fileID: 2138103778599055515}
+  m_RendererFeatureMap: adc0de57c6d2eee5eab306d21698819c9b3051f80e12ac1d
   m_UseNativeRenderPass: 0
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
@@ -105,3 +106,100 @@ MonoBehaviour:
   m_DepthTextureFormat: 0
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 1
+--- !u!114 &2138103778599055515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c8d6ac66772e4185bd13920192d54b3, type: 3}
+  m_Name: VHSPro
+  m_EditorClassIdentifier: Assembly-CSharp::VHSProRendererFeature
+  m_Active: 1
+  settings:
+    renderPassEvent: 550
+--- !u!114 &3754852771250185559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3277e3c6431244fb960cbd72870858e2, type: 3}
+  m_Name: FogRenderFeature
+  m_EditorClassIdentifier: Assembly-CSharp::PSX.FogRenderFeature
+  m_Active: 1
+--- !u!114 &4562298170538060651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a17da147615463497e4bd9e04f0dce1, type: 3}
+  m_Name: DitheringRenderFeature
+  m_EditorClassIdentifier: Assembly-CSharp::PSX.DitheringRenderFeature
+  m_Active: 1
+--- !u!114 &6767423315618959338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56597b0a50618247b43536d4501a4bf, type: 3}
+  m_Name: VHS
+  m_EditorClassIdentifier: FronkonGames.Glitches.VHS::FronkonGames.Glitches.VHS.VHS
+  m_Active: 1
+  settings:
+    intensity: 1
+    noise: 0.704
+    noiseSpeed: 2
+    noiseSize: 0.2
+    noiseBlend: 0
+    noiseColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    pause: 0.25
+    pauseNoise: 0.1
+    pauseBand: 1
+    pauseBlend: 16
+    pauseColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    brightness: 0
+    contrast: 1
+    gamma: 1
+    hue: 0
+    saturation: 1
+    affectSceneView: 0
+    filterMode: 1
+    whenToInsert: 550
+    ignoreDeltaTimeScale: 0
+    enableProfiling: 0
+--- !u!114 &7382863396025091393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6534dd185a4f18b50629b58de296b6, type: 3}
+  m_Name: PixelationRenderFeature
+  m_EditorClassIdentifier: Assembly-CSharp::PSX.PixelationRenderFeature
+  m_Active: 1
