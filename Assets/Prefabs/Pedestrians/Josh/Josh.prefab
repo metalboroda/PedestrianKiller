@@ -3707,7 +3707,7 @@ MonoBehaviour:
     freezePermanently: 0
     enableAngularLimitsOnKill: 1
     enableInternalCollisionsOnKill: 1
-  mode: 1
+  mode: 2
   blendTime: 0.1
   fixTargetTransforms: 1
   solverIterationCount: 6
@@ -4833,7 +4833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56184b14fcd54cb8a6a25fc1fa50c16f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Character.CharacterMovementHandler
-  walkSpeed: 2
+  walkSpeed: 1.75
   injuredWalkSpeed: 1
   injuredRunSpeed: 3
 --- !u!114 &4695364870548607003

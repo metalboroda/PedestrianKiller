@@ -69,7 +69,7 @@ MonoBehaviour:
     m_Value: 2
   bitsSynced:
     m_OverrideState: 1
-    m_Value: 50
+    m_Value: 25
   bitsGray:
     m_OverrideState: 0
     m_Value: 1
@@ -130,19 +130,19 @@ MonoBehaviour:
     m_Value: 1
   signalNoiseAmount:
     m_OverrideState: 0
-    m_Value: 0.354
+    m_Value: 0.467
   signalNoisePower:
     m_OverrideState: 0
     m_Value: 0.83
   lineNoiseOn:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   lineNoiseAmount:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 4.91
   lineNoiseSpeed:
     m_OverrideState: 0
-    m_Value: 5
+    m_Value: 5.26
   tapeNoiseOn:
     m_OverrideState: 0
     m_Value: 0
@@ -156,10 +156,10 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   scanLinesOn:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   scanLineWidth:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 10
   linesFloatOn:
     m_OverrideState: 0
