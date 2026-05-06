@@ -34,5 +34,10 @@ MonoBehaviour:
   recoilVibrato: 5
   vfxLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 9
+  wallBloodPrefabs:
+  - {fileID: 2512374853910884530, guid: b511d222a7aa99f498aef90c87c3aee8, type: 3}
+  - {fileID: 5408863199685995058, guid: b023be22bc6ed7440907429d8b033756, type: 3}
+  - {fileID: 5408863199685995058, guid: e344a95c94bbde14e89903106ef2c492, type: 3}
+  - {fileID: 5408863199685995058, guid: a382ae7fd277014418be2c4710620461, type: 3}
   materialEffects: []

@@ -54,6 +54,7 @@ namespace Assets.Scripts.Weapons
         private void LateUpdate()
         {
             if (!currentWeapon) return;
+            
             RotateWeapon();
         }
 

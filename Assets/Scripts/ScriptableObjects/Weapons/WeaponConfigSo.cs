@@ -34,17 +34,20 @@ namespace Assets.Scripts.ScriptableObjects.Weapons
         public float rotationSpeed = 20f;
 
         [Header("Recoil Settings (DOTween)")]
-        [Tooltip("Сила удару назад (позиція)")]
+        [Tooltip("Сила віддачі назад")]
         public float recoilStrength = 0.1f;
-        [Tooltip("Сила підкидання ствола вгору (градуси)")]
+        [Tooltip("Сила підкидання ствола")]
         public float recoilRotationStrength = 5f;
-        [Tooltip("Тривалість анімації повернення")]
+        [Tooltip("Тривалість анімації віддачі")]
         public float recoilDuration = 0.1f;
-        [Tooltip("Кількість вібрацій (для Punch анімації)")]
+        [Tooltip("Вібрація (для Punch)")]
         public int recoilVibrato = 5;
 
         [Header("VFX Settings")]
         public LayerMask vfxLayerMask;
+        [Space]
+        public GameObject[] wallBloodPrefabs;
+
         [Space]
         public MaterialEffectConfig[] materialEffects;
 
@@ -52,7 +55,7 @@ namespace Assets.Scripts.ScriptableObjects.Weapons
         public class MaterialEffectConfig
         {
             public Material[] materials;
-            public GameObject effectPrefab;
+            public GameObject[] effectPrefabs;
         }
     }
 }
