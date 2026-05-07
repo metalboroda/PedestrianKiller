@@ -12,6 +12,7 @@ namespace Assets.Scripts.ScriptableObjects.Character
         [field: SerializeField] public string[] WalkAnimations { get; private set; }
         [field: SerializeField] public string[] InjuredWalkAnimations { get; private set; }
         [field: SerializeField] public string[] InjuredRunAnimations { get; private set; }
+        [field: SerializeField] public string[] CrouchAfraidAnimations { get; private set; }
 
         [Header("Hit Animations")]
         [SerializeField] private string[] hitAnimations;
@@ -42,14 +43,19 @@ namespace Assets.Scripts.ScriptableObjects.Character
             return GetRandomAnimation(InjuredRunAnimations);
         }
 
-        public string GetRandomInjuredLyingAnimation()
+        public string GetRandomCrouchAfraidAnimation()
         {
-            return GetRandomAnimation(InjuredLyingAnimations);
+            return GetRandomAnimation(CrouchAfraidAnimations);
         }
 
         public string GetRandomHitAnimation()
         {
             return GetRandomAnimation(hitAnimations);
+        }
+
+        public string GetRandomInjuredLyingAnimation()
+        {
+            return GetRandomAnimation(InjuredLyingAnimations);
         }
 
         public string GetRandomDeathAnimation()

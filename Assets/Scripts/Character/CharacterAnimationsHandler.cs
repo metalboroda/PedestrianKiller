@@ -39,6 +39,11 @@ namespace Assets.Scripts.Character
             _animator.CrossFadeInFixedTime(characterAnimationsData.GetRandomInjuredRunAnimation(), crossFadeDuration);
         }
 
+        public void CrouchAfraidAnimation()
+        {
+            _animator.CrossFadeInFixedTime(characterAnimationsData.GetRandomCrouchAfraidAnimation(), crossFadeDuration);
+        }
+
         public void HitAnimation()
         {
             _animator.CrossFadeInFixedTime(characterAnimationsData.GetRandomHitAnimation(), crossFadeDuration);

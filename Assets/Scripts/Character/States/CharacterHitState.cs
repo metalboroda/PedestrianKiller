@@ -6,7 +6,8 @@ namespace Assets.Scripts.Character.States
     {
         private const float _hitDuration = 0.25f;
         private float _hitTick;
-        private const int _runPercent = 8;
+        private const int _runInjuredPercent = 8;
+        private const int _crouchAfraidPercent = 5;
 
         public override void Enter()
         {
@@ -23,10 +24,13 @@ namespace Assets.Scripts.Character.States
 
             if (_hitTick >= _hitDuration)
             {
-                int randomRun = Random.Range(0, _runPercent);
+                int randomRunInjured = Random.Range(0, _runInjuredPercent);
+                int randomCrouchAfraid = Random.Range(0, _crouchAfraidPercent);
 
-                if (randomRun == 0)
+                if (randomRunInjured == 0)
                     StateMachine.ChangeState(StateFactory.GetState<CharacterInjuredRunState>());
+                else if (randomCrouchAfraid == 0)
+                    StateMachine.ChangeState(StateFactory.GetState<CharacterCrouchAfraidState>());
                 else
                     StateMachine.ChangeState(StateFactory.GetState<CharacterInjuredWalkState>());
             }

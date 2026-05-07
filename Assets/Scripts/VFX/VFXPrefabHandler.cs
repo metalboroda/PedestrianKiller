@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace Assets.Scripts.VFX
 {
-    [RequireComponent(typeof(ParticleSystem))] [RequireComponent(typeof(AudioSource))]
+    [RequireComponent(typeof(ParticleSystem))]
+    [RequireComponent(typeof(AudioSource))]
     public class VFXPrefabHandler : MonoBehaviour, IPoolable
     {
         [SerializeField] private float destroyTime = 3f;
@@ -32,24 +33,22 @@ namespace Assets.Scripts.VFX
 
         public void OnSpawn()
         {
-            _particleSystem.Play();
+            if (_particleSystem)
+                _particleSystem.Play();
 
             if (needSound)
-            {
                 _audioPlayerComponent.PlayRandomClip(audioClips, false, true);
-            }
 
             LeanPool.Despawn(gameObject, destroyTime);
         }
 
         public void OnDespawn()
         {
-            _particleSystem.Stop();
+            if (_particleSystem)
+                _particleSystem.Stop();
 
             if (needSound)
-            {
                 _audioPlayerComponent.StopAll();
-            }
         }
     }
 }

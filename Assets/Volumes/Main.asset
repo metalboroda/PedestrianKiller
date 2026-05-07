@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.VolumeProfile
   components:
   - {fileID: 7107920334621452066}
-  - {fileID: 7129610941123078948}
   - {fileID: 8023448902779847444}
 --- !u!114 &7107920334621452066
 MonoBehaviour:
@@ -44,7 +43,7 @@ MonoBehaviour:
     m_Value: 1
   screenResPresetId:
     m_OverrideState: 1
-    m_Value: 9
+    m_Value: 15
   screenWidth:
     m_OverrideState: 1
     m_Value: 640
@@ -83,19 +82,19 @@ MonoBehaviour:
     m_Value: 1
   ditherMode:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 4
   ditherAmount:
     m_OverrideState: 1
-    m_Value: 0.25
+    m_Value: 0.5
   paletteOn:
     m_OverrideState: 0
     m_Value: 1
   paletteId:
-    m_OverrideState: 0
-    m_Value: 12
+    m_OverrideState: 1
+    m_Value: 2
   paletteDelta:
-    m_OverrideState: 0
-    m_Value: 5
+    m_OverrideState: 1
+    m_Value: 30
   paletteTex:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -108,7 +107,7 @@ MonoBehaviour:
     m_Value: 1
   crtMode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 2
   bleedAmount:
     m_OverrideState: 1
     m_Value: 1
@@ -132,16 +131,16 @@ MonoBehaviour:
     m_Value: 1
   signalNoiseAmount:
     m_OverrideState: 0
-    m_Value: 0.467
+    m_Value: 0.414
   signalNoisePower:
     m_OverrideState: 0
-    m_Value: 0.83
+    m_Value: 0.682
   lineNoiseOn:
     m_OverrideState: 0
     m_Value: 1
   lineNoiseAmount:
     m_OverrideState: 0
-    m_Value: 4.91
+    m_Value: 10
   lineNoiseSpeed:
     m_OverrideState: 0
     m_Value: 5.26
@@ -162,13 +161,13 @@ MonoBehaviour:
     m_Value: 1
   scanLineWidth:
     m_OverrideState: 0
-    m_Value: 10
+    m_Value: 20
   linesFloatOn:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   linesFloatSpeed:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 0
   stretchOn:
     m_OverrideState: 1
     m_Value: 1
@@ -249,25 +248,6 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {fileID: 0}
     dimension: 1
---- !u!114 &7129610941123078948
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb60a22f311433c4c962b888d1393f88, type: 3}
-  m_Name: PaniniProjection
-  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.PaniniProjection
-  active: 1
-  distance:
-    m_OverrideState: 1
-    m_Value: 0.5
-  cropToFit:
-    m_OverrideState: 1
-    m_Value: 1
 --- !u!114 &8023448902779847444
 MonoBehaviour:
   m_ObjectHideFlags: 3

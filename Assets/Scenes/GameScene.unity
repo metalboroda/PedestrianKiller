@@ -9538,7 +9538,7 @@ MonoBehaviour:
   maxPitch: 30
   useHorizontalClamp: 1
   minYaw: -30
-  maxYaw: 30
+  maxYaw: 34
   smoothTime: 0.05
 --- !u!114 &2011200978
 MonoBehaviour:
