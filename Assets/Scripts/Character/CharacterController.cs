@@ -18,6 +18,7 @@ namespace Assets.Scripts.Character
         private EventBinding<Events.BodyPartDamaged> _bodyPartDamagedBinding;
         private EventBinding<Events.CharacterIsInjured> _characterIsInjuredBinding;
         private EventBinding<Events.CharacterIsDead> _characterIsDeadBinding;
+        private EventBinding<Events.CharacterIsDeadAfterInjury> _characterIsDeadAfterInjuryBinding;
 
         private bool _isInjured;
         private bool _isDead;
@@ -36,6 +37,8 @@ namespace Assets.Scripts.Character
             EventBus<Events.CharacterIsInjured>.Register(_characterIsInjuredBinding);
             _characterIsDeadBinding = new EventBinding<Events.CharacterIsDead>(OnCharacterIsDead);
             EventBus<Events.CharacterIsDead>.Register(_characterIsDeadBinding);
+            _characterIsDeadAfterInjuryBinding = new EventBinding<Events.CharacterIsDeadAfterInjury>(OnCharacterIsDeadAfterInjury);
+            EventBus<Events.CharacterIsDeadAfterInjury>.Register(_characterIsDeadAfterInjuryBinding);
         }
 
         private void Start()
@@ -53,6 +56,7 @@ namespace Assets.Scripts.Character
             EventBus<Events.BodyPartDamaged>.Unregister(_bodyPartDamagedBinding);
             EventBus<Events.CharacterIsInjured>.Unregister(_characterIsInjuredBinding);
             EventBus<Events.CharacterIsDead>.Unregister(_characterIsDeadBinding);
+            EventBus<Events.CharacterIsDeadAfterInjury>.Unregister(_characterIsDeadAfterInjuryBinding);
         }
 
         private void OnBodyPartDamaged(Events.BodyPartDamaged eventData)
@@ -78,6 +82,16 @@ namespace Assets.Scripts.Character
         }
 
         private void OnCharacterIsDead(Events.CharacterIsDead eventData)
+        {
+            if (eventData.CharacterID == gameObject.GetInstanceID())
+            {
+                _isDead = true;
+
+                StateMachine.ChangeState(StateFactory.GetState<CharacterDeathState>());
+            }
+        }
+
+        private void OnCharacterIsDeadAfterInjury(Events.CharacterIsDeadAfterInjury eventData)
         {
             if (eventData.CharacterID == gameObject.GetInstanceID())
             {
